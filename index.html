@@ -60,20 +60,20 @@
             }
         }
 
-        async function getNumberOfBranches() {
-            try {
-                const response = await fetch('https://api.github.com/repos/LeadWoods0902/LeadWoods0902.github.io/branches');
-                const branches = await response.json();
-                return branches.length;
-            } catch (error) {
-                console.error('Error fetching commits:', error);
-                return null;
-            }
-        }
+        // async function getNumberOfBranches() {
+        //     try {
+        //         const response = await fetch('https://api.github.com/repos/LeadWoods0902/LeadWoods0902.github.io/branches');
+        //         const branches = await response.json();
+        //         return branches.length;
+        //     } catch (error) {
+        //         console.error('Error fetching commits:', error);
+        //         return null;
+        //     }
+        // }
 
-        getNumberOfBranches()
-        .then(numBranches => {
-            if (numBranches !== null) {
+        // getNumberOfBranches()
+        // .then(numBranches => {
+        //     if (numBranches !== null) {
                 getNumberOfCommits()
                 .then(numCommits => {
                     if (numCommits !== null) {
@@ -83,8 +83,9 @@
                         console.log('Failed to fetch number of commits.');
                     }
                 })
-            }
-        });
+        //     }
+        // })
+        ;
 
         updateTime();
 
