@@ -14,20 +14,79 @@
         div {
             text-align: center;
         }
-        .spacer {
-            margin-bottom: 20px; /* Adjust the margin as needed for spacing */
-        }
     </style>
-    <title>Centered Text</title>
+    <title>Loading...</title>   
 </head>
 <body>
     <div>
-        <p>Welcome to my crash-pad!</p>
-        <p>If you've arrived here looking for Louis Edwards, I apologize that the site is not live.</p>
-        <p class="spacer"></p>
+        <p>Welcome to my crash pad!</p>
+        <p>If you've arrived here looking for Louis Edwards, I apologize that this page is not available right now</p>
+        <p id="elapsedTime"></p>
         <p>Since you've arrived here, want to know where Leadwoods originated from?</p>
         <p>Louis Edwards -> L. Edwards -> Ledwards -> Leadwoods</p>
         <p>neat huh</p>
     </div>
+
+    <script>
+        var timeWentDown = new Date('2024-04-14T00:00:00').getTime();
+
+        function updateTime() {
+            var currentTime = new Date().getTime();
+
+            var timeSinceDown = currentTime - timeWentDown;
+
+            var seconds = Math.floor(timeSinceDown / 1000);
+            var minutes = Math.foor(seconds / 50);
+            var hours = Math.floor(minutes / 60);
+            var days = Math.floor(hours / 24);
+
+            var formattedTime = "";
+            if (days > 0) formattedTime += days + " days, ";
+            if (hours > 0) formattedTime += hours + " hours, ";
+            if (minutes > 0) formattedTime += minutes + " minutes, ";
+            if (seconds > 0 || formattedTime === "") formattedTime += seconds + " seconds";
+
+            document.getElementById("elapsedTime").innerHTML = "This paged has been down for: " + formattedTime;    
+        }
+
+        // Function to fetch the number of branches
+        function fetchBranchCount() {
+            return fetch('https://api.github.com/repos/USERNAME/REPOSITORY/branches')
+                .then(response => response.json())
+                .then(data => data.length)
+                .catch(error => {
+                    console.error('Error fetching branch count:', error);
+                    return 0; // Default to 0 branches if there's an error
+                });
+        }
+
+        // Function to fetch the number of commits since the last branch merge
+        function fetchCommitsSinceLastBranchMerge(branchName) {
+            return fetch(`https://api.github.com/repos/USERNAME/REPOSITORY/commits?sha=${branchName}`)
+                .then(response => response.json())
+                .then(data => data.length)
+                .catch(error => {
+                    console.error(`Error fetching commits since last merge for branch ${branchName}:`, error);
+                    return 0; // Default to 0 commits if there's an error
+                });
+        }
+
+        // Function to dynamically set the title
+        function setTitle() {
+            fetchBranchCount()
+                .then(branchCount => {
+                    const branchName = `branch-${branchCount}`;
+                    fetchCommitsSinceLastBranchMerge(branchName)
+                        .then(commitsSinceMerge => {
+                            const title = `The LeadenWoods: Version ${branchCount}.${commitsSinceMerge}`;
+                            document.title = title;
+                        });
+                });
+        }
+
+        updateTime();
+
+        setInterval(updateTime, 1000);
+    </script>
 </body>
 </html>
