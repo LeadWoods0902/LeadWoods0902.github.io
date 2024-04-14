@@ -17,36 +17,8 @@
     </style>
     <title>Centered Text</title>
     <script>
-    // Hardcoded moment in time (in milliseconds since January 1, 1970)
-    var hardcodedTime = new Date('2023-01-01T00:00:00').getTime();
-
-    // Function to update elapsed time
-    function updateElapsedTime() {
-        // Current time in milliseconds since January 1, 1970
-        var currentTime = new Date().getTime();
-
-        // Calculate elapsed time in milliseconds
-        var elapsedTime = currentTime - hardcodedTime;
-
-        // Convert elapsed time to a readable format
-        var seconds = Math.floor(elapsedTime / 1000);
-        var minutes = Math.floor(seconds / 60);
-        var hours = Math.floor(minutes / 60);
-        var days = Math.floor(hours / 24);
-
-        // Format the elapsed time
-        var formattedTime = days + " days, " + hours % 24 + " hours, " + minutes % 60 + " minutes, " + seconds % 60 + " seconds";
-
-        // Update the content of the <p> element with the elapsed time
-        document.getElementById("elapsedTime").innerHTML = "Time elapsed since this page went down: " + formattedTime;
-    }
-
-    // Call the function to update elapsed time initially
-    updateElapsedTime();
-
-    // Update elapsed time every second
-    setInterval(updateElapsedTime, 1000);
-</script>
+        document.getElementById("elapsedTime").innerHTML = "Time elapsed since this page went down: ";
+    </script>
 </head>
 <body>
     <div>
