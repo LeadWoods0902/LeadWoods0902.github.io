@@ -78,7 +78,8 @@
                 .then(numCommits => {
                     if (numCommits !== null) {
                         console.log('Number of commits:', numCommits);
-                        document.title = `The LeadenWoods: V${numBranches}.${numCommits}`;
+                        // document.title = `The LeadenWoods: V${numBranches}.${numCommits}`;
+                        document.title = `The LeadenWoods: V${numCommits}`;
                     } else {
                         console.log('Failed to fetch number of commits.');
                     }
