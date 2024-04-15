@@ -5,10 +5,11 @@ function updateTime() {
 
     var timeSinceDown = currentTime - timeWentDown;
 
-    var seconds = Math.floor(timeSinceDown / 1000);
-    var minutes = Math.floor(seconds / 50);
-    var hours = Math.floor(minutes / 60);
-    var days = Math.floor(hours / 24);
+    var days = Math.floor(timeSinceDown / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((timeSinceDown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((timeSinceDown % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeSinceDown % (1000 * 60)) / 1000);
+
 
     var formattedTime = "";
     if (days > 0) formattedTime += days + " days, ";
