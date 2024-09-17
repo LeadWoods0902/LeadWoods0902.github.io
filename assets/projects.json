@@ -1,0 +1,92 @@
+[
+    {
+        "title": "Weather App",
+        "description_short": "A web app that displays weather information.",
+        "advanced_details": {
+            "description_long": "This project is a responsive web application that fetches weather data from a third-party API and displays it in an intuitive UI. Users can search for weather details by city and see forecasts for the next 7 days.",
+            "techstack": ["HTML", "CSS", "JavaScript", "OpenWeather API"],
+            "link": "https://github.com/user/weather-app",
+            "date_started": "2023-01-15",
+            "date_completed": "2023-02-10",
+            "on_hold": false
+        }
+    },
+
+    {
+        "title": "Portfolio Website",
+        "description_short": "A personal portfolio website.",
+        "advanced_details": {
+            "description_long": "This project is a fully responsive portfolio website that showcases personal projects, a resume, and contact information. It features smooth animations and a light/dark mode toggle for user customization.",
+            "techstack": ["HTML", "CSS", "JavaScript"],
+            "link": "https://user.github.io/portfolio",
+            "date_started": "2022-11-01",
+            "date_completed": null,
+            "on_hold": false
+        }
+    },
+
+    {
+        "title": "Task Manager App",
+        "description_short": "A simple task manager for daily use.",
+        "advanced_details": {
+            "description_long": "This project is a productivity-focused web application that helps users manage daily tasks. Features include task creation, categorization, due date tracking, and completion status updates. The app is designed for ease of use and efficient task management.",
+            "techstack": ["React", "Node.js", "MongoDB"],
+            "link": "https://github.com/user/task-manager",
+            "date_started": "2023-03-05",
+            "date_completed": null,
+            "on_hold": true
+        }
+    },
+
+    {
+        "title": "E-commerce Platform",
+        "description_short": "A full-featured e-commerce website.",
+        "advanced_details": {
+            "description_long": "This project is a robust and scalable e-commerce platform that provides user authentication, product search, shopping cart functionality, and order management. The platform is designed with security in mind, ensuring a smooth shopping experience for users.",
+            "techstack": ["Django", "PostgreSQL", "Bootstrap"],
+            "link": "https://github.com/user/ecommerce-platform",
+            "date_started": "2022-08-10",
+            "date_completed": "2022-12-01",
+            "on_hold": false
+        }
+    },
+
+    {
+        "title": "Blog CMS",
+        "description_short": "A content management system for blogging.",
+        "advanced_details": {
+            "description_long": "This project is a user-friendly content management system designed for bloggers. It includes features such as post creation, editing, and deletion, alongside user role management (admin, editor, author) and comment moderation capabilities.",
+            "techstack": ["Ruby on Rails", "SQLite", "TailwindCSS"],
+            "link": "https://github.com/user/blog-cms",
+            "date_started": "2021-06-01",
+            "date_completed": "2021-09-15",
+            "on_hold": false
+        }
+    },
+
+    {
+        "title": "Chat Application",
+        "description_short": "A real-time chat application.",
+        "advanced_details": {
+            "description_long": "This project is a real-time web-based chat application. It features multiple chat rooms, user authentication, and persistent message history. The app enables smooth, real-time communication between users in different rooms.",
+            "techstack": ["Node.js", "Socket.io", "Express", "MongoDB"],
+            "link": "https://github.com/user/chat-application",
+            "date_started": "2023-05-10",
+            "date_completed": null,
+            "on_hold": true
+        }
+    },
+
+    {
+        "title": "Stock Market Analyzer",
+        "description_short": "A tool for analyzing stock market trends.",
+        "advanced_details": {
+            "description_long": "This project is a Python-based tool designed to collect and analyze stock market data, offering users insights and trends. The tool includes data visualization features and supports analysis across multiple stock exchanges, making it a valuable resource for investors.",
+            "techstack": ["Python", "Pandas", "Matplotlib", "Yahoo Finance API"],
+            "link": "https://github.com/user/stock-market-analyzer",
+            "date_started": "2022-01-20",
+            "date_completed": "2022-04-05",
+            "on_hold": false
+        }
+    }
+]

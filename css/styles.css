@@ -4,36 +4,32 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    overflow: hidden;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
+.y-scroll-container {
     height: 100vh;
-}
-
-.container::-webkit-scrollbar {
-    display: none;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    transition: background-color 0.5s ease;
+    border: 2px solid red; 
 }
 
 .page {
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    height: 100vh;
     scroll-snap-align: start;
-    font-size: 3em;
+    outline: 3px solid green;
 }
 
-#page-overview {
-    background-color: lightblue;
+.color-blue1 {
+    background-color: #caf0f8;
 }
 
-#page-library {
-    background-color: lightcoral;
+.color-blue2 {
+    background-color: #90e0ef;
+}
+
+.color-blue3 {
+    background-color: #00b4d8;
 }
